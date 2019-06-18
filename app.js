@@ -1,17 +1,23 @@
 'use strict';
 
-const fs = require('fs');
+const alter = require('./mod/read');
+const event = require('./events/event');
 
 
-const read = require('./mod/read');
-const write = require('./mod/write');
-const upper = require('./mod/upper');
 
+const net = require('net');
+const server = net.createServer();
+
+server.listen(3001, () => console.log('Listening on PORT 3001'));
 
 const alterFile = (file) => {
-  read(file)
+  alter.readFile(file)
     .then(data => {
-      write(file, Buffer.from(upper(data)));
+      alter.writeFile(file, Buffer.from(alter.upper(data)));
+    })
+    .then(event.emit('save', 'saved'))
+    .catch(function(error) {
+      console.error(error);
     });
 };
 
