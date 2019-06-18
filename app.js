@@ -3,12 +3,12 @@
 const alter = require('./mod/read');
 const event = require('./events/event');
 
-
-
 const net = require('net');
-const server = net.createServer();
 
-server.listen(3001, () => console.log('Listening on PORT 3001'));
+const client = new net.Socket();
+
+client.connect(3001, 'localhost', () => console.log('Socket in app.js connected'));
+
 
 const alterFile = (file) => {
   alter.readFile(file)
@@ -20,6 +20,16 @@ const alterFile = (file) => {
       console.error(error);
     });
 };
+
+const sendInfo = () => {
+  let event = ['save'];
+  let payload = {
+    name: event,
+    data: `A ${event} event just happened!!`,
+  };
+  client.write(JSON.stringify(payload));
+};
+sendInfo();
 
 let file = process.argv.slice(2).shift();
 alterFile(file);
