@@ -2,15 +2,17 @@
 
 const fs = require('fs');
 
+
+const read = require('./mod/read');
+const write = require('./mod/write');
+const upper = require('./mod/upper');
+
+
 const alterFile = (file) => {
-  fs.readFile( file, (err, data) => {
-    if(err) { throw err; }
-    let text = data.toString().toUpperCase();
-    fs.writeFile( file, Buffer.from(text), (err, data) => {
-      if(err) { throw err; }
-      console.log(`${file} saved`);
+  read(file)
+    .then(data => {
+      write(file, Buffer.from(upper(data)));
     });
-  });
 };
 
 let file = process.argv.slice(2).shift();
