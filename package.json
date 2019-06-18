@@ -1,0 +1,27 @@
+{
+  "name": "lab-17",
+  "version": "1.0.0",
+  "description": "## Project Name TCP Server / Message Application",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json .",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tia-rose-401-advanced-javascript/lab-17.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tia-rose-401-advanced-javascript/lab-17/issues"
+  },
+  "homepage": "https://github.com/tia-rose-401-advanced-javascript/lab-17#readme",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0"
+  }
+}
