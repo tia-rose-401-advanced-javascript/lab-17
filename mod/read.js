@@ -8,7 +8,7 @@ const writeFile = util.promisify(fs.writeFile);
 
 
 const upper = (data) => {
-  return data.toString().toLowerCase();
+  return data.toString().toUpperCase();
 };
 
 module.exports = {readFile, writeFile, upper};

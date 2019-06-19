@@ -31,11 +31,9 @@ Usage Notes or examples
 
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+* node server.js
+* node app.js test.text
+* node ./events/logger.js
   
 #### Tests
 * How do you run tests?

@@ -18,7 +18,12 @@ const alterFile = (file) => {
     .then(event.emit('save', 'saved'))
     .catch(function(error) {
       console.error(error);
+      // event.emit('error', error);
     });
+  // .catch((error) => {
+  //   console.error(error);        // Trying to get error to work
+  //   event.emit('error', 'error');
+  // });
 };
 
 const sendInfo = () => {
