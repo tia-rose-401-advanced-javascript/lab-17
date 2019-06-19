@@ -13,12 +13,12 @@ client.connect(3001, 'localhost', () => console.log('Socket in app.js connected'
 const alterFile = (file) => {
   alter.readFile(file)
     .then(data => {
-      alter.writeFile(file, Buffer.from(alter.upper(data)));
+      data = alter.upper(data);
+      alter.writeFile(file, data);
     })
-    .then(event.emit('save', 'saved'))
-    .catch(function(error) {
-      console.error(error);
-      // event.emit('error', error);
+    .then(client.write(payload('saved')))
+    .catch(error =>{
+      client.write(payload('error'));
     });
   // .catch((error) => {
   //   console.error(error);        // Trying to get error to work
@@ -26,15 +26,14 @@ const alterFile = (file) => {
   // });
 };
 
-const sendInfo = () => {
-  let event = ['save'];
+const payload = (event) => {
   let payload = {
     name: event,
     data: `A ${event} event just happened!!`,
   };
-  client.write(JSON.stringify(payload));
+  return JSON.stringify(payload);
 };
-sendInfo();
+
 
 let file = process.argv.slice(2).shift();
 alterFile(file);
