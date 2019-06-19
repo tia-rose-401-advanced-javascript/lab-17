@@ -1,7 +1,6 @@
 'use strict';
 
 const alter = require('./mod/read');
-const event = require('./events/event');
 
 const net = require('net');
 
