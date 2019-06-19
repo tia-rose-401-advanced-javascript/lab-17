@@ -6,24 +6,9 @@ TCP Server / Message Application
 ### Author: Tia Rose
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
+* [submission PR](https://github.com/tia-rose-401-advanced-javascript/lab-17/pull/1)
+* [travis](https://www.travis-ci.com/tia-rose-401-advanced-javascript/lab-17)
 
-
-#### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
-
-### Modules
-#### `modulename.js`
-##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
 
 ### Setup
 #### `.env` requirements
@@ -37,6 +22,8 @@ Usage Notes or examples
   
 #### Tests
 * How do you run tests?
+npm run test
+
 * What assertions were made?
 * What assertions need to be / should be made?
 
