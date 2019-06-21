@@ -9,7 +9,7 @@
     "test-watch": "jest --watchAll --verbose --coverage",
     "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json .",
     "start": "node server.js",
-    "app": "node app.js test.text",
+    "app": "node app.js ./files/test.text",
     "log": "node ./events/logger.js"
   },
   

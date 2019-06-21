@@ -1,9 +1,7 @@
 'use strict';
 
 const alter = require('./mod/read');
-
 const net = require('net');
-
 const client = new net.Socket();
 
 client.connect(3001, 'localhost', () => console.log('Socket in app.js connected'));
@@ -19,10 +17,6 @@ const alterFile = (file) => {
     .catch(error =>{
       client.write(payload('error'));
     });
-  // .catch((error) => {
-  //   console.error(error);        // Trying to get error to work
-  //   event.emit('error', 'error');
-  // });
 };
 
 const payload = (event) => {

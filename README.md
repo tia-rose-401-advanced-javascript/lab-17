@@ -10,22 +10,16 @@ TCP Server / Message Application
 * [travis](https://www.travis-ci.com/tia-rose-401-advanced-javascript/lab-17)
 
 
-### Setup
-#### `.env` requirements
-* `PORT` - 3001
-
-
 #### Running the app
-* node server.js
-* node app.js test.text
-* node ./events/logger.js
+* `node server.js` or npm run start
+* `node ./events/logger.js` or npm run log
+* `node app.js ./files/test.text` or npm run app
   
 #### Tests
 * How do you run tests?
+
 npm run test
 
-* What assertions were made?
-* What assertions need to be / should be made?
 
 #### UML
 ![UML](./assets/UML-17.JPG)
